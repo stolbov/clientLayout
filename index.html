@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="mainApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+    <title>!!!</title>
+    <link rel="stylesheet" href="http://js.arcgis.com/3.10/js/esri/css/esri.css">
+    <link rel="stylesheet" href="css/custom.css" />
+    <script src="http://js.arcgis.com/3.10/"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
+</head>
+
+<body ng-controller="mainController">
+    <div id="mainWr">
+        <div id="mapLegendWr" class="innerWr floated">
+            <div class="blTitle">Содержание карты:</div>
+            <ul class="layerList">
+                <li>
+                    <div class="showLayersTriggerWr floated">
+                        <input type="checkbox" class="showLayersTrigger">
+                    </div>
+                    <div class="subsView {{openLayer}} floated" ng-click="layersOpener()"></div>
+                    <div class="itemTitle floated">
+                        Земельные участки
+                    </div>
+                    <div class="itemTools">
+                        <div class="editBtn miniTool floated" title="Редактировать" ng-click="editLayer()"></div>
+                        <div class="deleteBtn miniTool floated" title="Удалить"></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                    <ul class="layerList subLayers {{openLayer}}">
+                        <li>
+                            <div class="itemTitle floated">
+                                Земельные участки 1
+                            </div>
+                        </li>
+                        <li>
+                            <div class="itemTitle floated">
+                                Земельные участки 2
+                            </div>
+                        </li>
+                        <li>
+                            <div class="itemTitle floated">
+                                Земельные участки 3
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="showLayersTriggerWr floated">
+                        <input type="checkbox" class="showLayersTrigger">
+                    </div>
+                    <div class="subsView hide floated"></div>
+                    <div class="itemTitle floated">
+                        Земельные участки без права аренды каждый второй четверг четных месяцев високосного года
+                    </div>
+                    <div class="itemTools">
+                        <div class="editBtn miniTool floated" title="Редактировать"></div>
+                        <div class="deleteBtn miniTool floated" title="Удалить"></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+            </ul>
+        </div>
+        <div id="editorWr" class="{{showEditor}} floated">
+            <div class="innerBlockWr">
+                <div class="cleseEdit" ng-click="closeEditor()"></div>
+                <div class="editorTitle">
+                    Редактирование слоя "..."
+                </div>
+                editor...
+            </div>
+        </div>
+    </div>
+    <div id="mapWr">
+        <div id="map"></div>
+        <div class="btnMini {{resizeWideClass}}" id="resizeBtn" ng-click="resizer()" title="{{resizeMsg}}"></div>
+        <div id="mapSearchToolsWr" class="{{searchView}}">
+            <div id="searchTitleWr">
+            </div>
+            <input type="text" class="textField" name="search" ng-model="search" ng-change="searchCleaner()" ng-click="openSearch()"><span id="emptySearch" ng-show="clearSearchShow" ng-click="emptySearch()"></span><input type="submit" class="submitField" value="Найти" ng-click="searcher()">
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

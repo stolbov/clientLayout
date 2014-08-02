@@ -1,0 +1,297 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden !important;
+}
+.clear{
+    clear: both;
+}
+.floated{
+    display: block;
+    float: left;
+}
+#map {
+    position: absolute;
+    background-color: #EEEEDD;
+    height: 100%;
+    width: 30%;
+    padding: 0px;
+    z-index: 0;
+    right: 0px;
+
+}
+#mainWr{
+    float: left;
+    width: 70%;
+}
+#mapWr{
+    width: 30%;
+    margin-left: 70%;
+    background: #ccc;
+}
+.btn{
+    display: inline-block;
+    margin: 10px;
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #333;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btnMini{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 0px;
+    padding: 0px;
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn:hover, .btnMini:hover{
+    background-color: #eee;
+}
+#mapToolsWr{
+}
+#resizeBtn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-position: center;
+    background-size: 17px;
+    background-repeat: no-repeat;
+}
+#resizeBtn.openMap{
+    background-image: url('../images/png/glyphicons_215_resize_full.png');
+}
+#resizeBtn.closeMap{
+    background-image: url('../images/png/glyphicons_214_resize_small.png');
+}
+#mapSearchToolsWr{
+    position: absolute;
+    top: 60px;
+    overflow: hidden;
+    z-index: 1000;
+    transition: 300ms;
+}
+#mapSearchToolsWr.hide{
+    right: -225px;
+}
+#mapSearchToolsWr:hover, #mapSearchToolsWr.open{
+    right: 20px;
+}
+#mapSearchToolsWr.open #searchTitleWr,
+#mapSearchToolsWr:hover #searchTitleWr{
+    /*display: none;*/
+    width: 0px;
+    border: 0px;
+}
+#searchTitleWr{
+    position: absolute;
+    width: 60px;
+    height: 36px;
+    background-color: #65D0F1;
+    background-image: url('../images/png/glyphicons_027_search.png');
+    background-position: 15px center;
+    background-size: 17px;
+    background-repeat: no-repeat;
+    border: 1px solid #333;
+    border-radius: 5px;
+    border-right: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    cursor: pointer;
+    transition: 200ms;
+}
+.textField{
+    width: 200px;
+    background: #fff;
+    color: #333;
+    margin: 0px;
+    padding: 10px;
+    padding-right: 25px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    border-right: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.submitField{
+    width: 38px;
+    height: 38px;
+    background-color: #fff;
+    background-image: url('../images/png/glyphicons_027_search.png');
+    background-position: center;
+    background-size: 17px;
+    background-repeat: no-repeat;
+    border: 1px solid #333;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    cursor: pointer;
+    text-indent: -9999px;
+}
+.submitField:hover{
+    background-color: #eee;
+}
+#emptySearch{
+    display: inline-block;
+    width: 25px;
+    height: 36px;
+    margin-left: -25px;
+    vertical-align: middle;
+    background-color: transparent;
+    background-image: url('../images/png/glyphicons_256_delete.png');
+    background-position: center;
+    background-size: 17px;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: 200ms;
+}
+#emptySearch:hover{
+    opacity: 1;
+}
+
+.innerWr{
+    margin: 10px;
+}
+.blTitle{
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.layerList{
+    margin: 0;
+    padding: 0;
+}
+.layerList li{
+    display: block;
+    min-height: 22px;
+    margin-bottom: 6px;
+    list-style: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.layerList li:hover{
+    background-color: #eee; 
+}
+
+#mapLegendWr{
+    width: 50%;
+}
+.layerList .itemTitle{
+    width: 70%;
+}
+.layerList li .itemTools{
+    display: none;
+}
+.layerList li:hover .itemTools{
+    display: block;
+    float: right;
+}
+.itemTools .miniTool{
+    width: 22px;
+    height: 22px;
+    background-color: transparent;
+    border: 0;
+    background-position: center;
+    background-size: 17px;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 200ms;
+}
+.itemTools .miniTool:hover{
+    opacity: 1;
+}
+.miniTool.editBtn{
+    background-image: url('../images/png/glyphicons_150_edit.png');
+}
+.miniTool.deleteBtn{
+    background-image: url('../images/png/glyphicons_197_remove.png');
+}
+.layerList .itemTitle{
+    padding: 3px 0;
+}
+.subsView{
+    width: 20px;
+    height: 22px;
+    background-color: transparent;
+    background-position: center;
+    background-size: 11px;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    transition: 200ms;
+    cursor: pointer;
+}
+.subsView.hide{
+    background-image: url('../images/png/glyphicons_432_plus.png');
+}
+.subsView.show{
+    background-image: url('../images/png/glyphicons_433_minus.png');
+}
+.showLayersTriggerWr{
+    padding-top: 4px;
+}
+.showLayersTrigger{
+    margin: 0px;
+}
+.layerList.subLayers{
+    margin-left: 45px;
+}
+.layerList.subLayers li{
+    transition: 300ms;
+    opacity: 0.6;
+}
+.layerList.subLayers li:hover{
+    opacity: 1;
+}
+.layerList.subLayers.hide{
+    display: none;
+}
+.layerList.subLayers.show{
+    display: block;
+}
+
+#editorWr{
+    width: 40%;
+    padding: 10px;
+}
+#editorWr.show{
+    display: block;
+}
+#editorWr.hide{
+    display: none;
+}
+.innerBlockWr{
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+.editorTitle{
+    font-size: 18px;
+    font-weight: bold;
+}
+.cleseEdit{
+    float: right;
+    width: 22px;
+    height: 22px;
+    background-color: transparent;
+    background-position: center;
+    background-size: 17px;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    transition: 200ms;
+    cursor: pointer;
+    background-image: url('../images/png/glyphicons_197_remove.png');
+}
